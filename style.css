@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in width/height calculations */
+}
+
+h1 {
+    color: #13355a;
+    height: 80px; /* Responsive height */
+    line-height: 80px; /* Matches height for centering text vertically */
+}
+
+.heading {
+    background-color: #ffffff ;
+    display: flex;
+    height: 80px; /* Responsive height */
+    align-items: center;
+    justify-content: center;
+}
+img{
+    height: 80px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+body {
+    background-color: #4EA5D9;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 1rem; /* Adds space around the container on small screens */
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2vmin;
+    width: 90vw; /* Adapts width based on the viewport */
+    max-width: 70vmin; /* Restricts max size */
+    height: auto; /* Adjusts height dynamically */
+    aspect-ratio: 1 / 1; /* Ensures a square grid */
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.box {
+    background-color: #D8DCFF;
+    border: none;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem #AEADF0;
+    cursor: pointer;
+    font-size: 2.5vw; /* Scales with viewport */
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    overflow: hidden; /* Prevents overflow */
+    word-wrap: break-word; /* Breaks long text */
+}
+
+.box:hover {
+    background-color: #c6efbe;
+}
+
+#reset {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #184454;
+    color: aliceblue;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+   /* Adds spacing on smaller screens */
+    width: 80%; /* Ensures button fits on small screens */
+    max-width: 300px;
+}
+
+#reset:hover {
+    background-color: #00a205;
+    border: none;
+    color: aliceblue;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Reduce font size on smaller screens */
+    }
+
+    .game {
+        width: 90vw; /* Takes more space on small screens */
+        gap: 3vmin;
+    }
+
+    .box {
+        font-size: 4vw; /* Adjust text size */
+    }
+
+    #reset {
+        font-size: 1rem; /* Smaller text size */
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.25rem; /* Further reduce font size */
+    }
+
+    .game {
+        gap: 4vmin; /* Increase gaps for better visibility */
+    }
+
+    .box {
+        font-size: 5vw;
+    }
+
+    #reset {
+        padding: 0.5rem;
+        font-size: 0.875rem;
+    }
+}
